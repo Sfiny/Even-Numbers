@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class numerosImpares {
+	public static void main(String[] args) {
+		Scanner leTeclado = new Scanner(System.in);
+		int num1;
+		int num2;
+		// num2 tem que ser maior que num1 para saber o range
+		do {
+			System.out.println("Digite um range para saber quais são números ímpares.");
+			System.out.println("Digitando o primeiro número menor, e em seguida o segundo.");
+			num1 = leTeclado.nextInt();
+			num2 = leTeclado.nextInt();
+			if (num1 > num2) {
+				System.out.println("Por favor, o primeiro número deve ser menor que o segundo. \n");
+			} else if (num1 == num2) {
+				System.out.println("Por favor, o range deve conter números diferentes \n");
+			}
+		} while (num1 >= num2); // Enquanto o número1 for maior ou igual a num2, repita.
+		if ((num1 % 2) != 0) { // Para saber se num1 entra ou não como primeiro número.
+			System.out.println((num1) + ", ");
+			num1++; // Para não repetir o mesmo número no loop
+		} else {
+			System.out.print((num1 + 1) + ", ");
+			num1 = num1 + 2; // Para não repetir o mesmo número no loop.
+		}
+		while (num1 <= num2) {
+			if (num1 % 2 != 0) {
+				System.out.print(num1 + ", ");
+			}
+			num1++;
+		}
+		leTeclado.close();
+	}
+
+}
